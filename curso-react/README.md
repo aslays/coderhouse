@@ -1,8 +1,8 @@
 # coderhouse
 entregas
 
-# master->last commit entregable clase 5
-cart-widget & itemListContainer
+# master->last commit entregable
+contador agregar al carrito
 
 
 
