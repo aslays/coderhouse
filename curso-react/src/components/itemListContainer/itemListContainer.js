@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import AddtoCartProductList from '../addToCart/addToCartProductList';
 
 const ItemListContainer = (props) =>{
 
@@ -14,7 +15,10 @@ const ItemListContainer = (props) =>{
                     <Card.Text>
                         {props.description_short}
                     </Card.Text>
-                    <Button variant="primary">Comprar</Button>
+                    
+                    <AddtoCartProductList/>
+
+                    <Button id="AddCartProductList" variant="primary">Añadir al Carrito</Button>
                 </Card.Body>
             </Card>
         </Container>
