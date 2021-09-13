@@ -12,7 +12,7 @@ code {
     monospace;
 } */
 
-#container-sale{
+.container-sale{
 
   padding-top: 50px;
 
@@ -27,12 +27,12 @@ code {
   font-weight: bold;
 }
 
-#inputCart{
+.inputCart{
   height: 38px;
   text-align: center;
 }
 
-#buttonsAddCart{
+.buttonsAddCart{
   padding-top: 10px;
   padding-bottom: 20px;
 }
@@ -40,3 +40,8 @@ code {
 /* #AddCartProductList{
   
 } */
+
+.cardProduct{
+  margin-left:20px;
+  margin-right: 20px;
+}

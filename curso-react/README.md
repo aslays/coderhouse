@@ -2,7 +2,7 @@
 entregas
 
 # master->last commit entregable
-contador agregar al carrito
+contador Promise & itemListContainer - Loading
 
 
 

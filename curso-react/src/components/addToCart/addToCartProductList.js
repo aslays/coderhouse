@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
 const AddtoCartProductList = () =>{
-
+      
     const [cartProducts, setCount] = useState(0)
     const stock = 8;
 
@@ -19,10 +19,10 @@ const AddtoCartProductList = () =>{
 
     return(
                
-        <ButtonGroup id="buttonsAddCart">
+        <ButtonGroup className="buttonsAddCart">
             <Button onClick = {discountCartItem}> - </Button>
 
-            <div><input id="inputCart" type ="text" value = {cartProducts}></input></div>
+            <div><input className="inputCart" type ="text" value = {cartProducts} placeholder="0"></input></div>
             
             <Button onClick = {sumItemToCart}> + </Button>
         </ButtonGroup>

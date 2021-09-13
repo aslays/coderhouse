@@ -7,7 +7,7 @@ function App() {
   return [
     
     <NavBar/>,
-    <ItemListContainer title = 'Producto Ejemplo' description_short='Descripción corta'/>    
+    <ItemListContainer/>    
         
   ]
 }
