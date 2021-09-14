@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
-const AddtoCartProductList = () =>{
+const AddtoCartProductList = (props) =>{
       
     const [cartProducts, setCount] = useState(0)
     const stock = 8;
@@ -19,7 +19,7 @@ const AddtoCartProductList = () =>{
 
     return(
                
-        <ButtonGroup className="buttonsAddCart">
+        <ButtonGroup className="buttonsAddCart" key={props.id} >
             <Button onClick = {discountCartItem}> - </Button>
 
             <div><input className="inputCart" type ="text" value = {cartProducts} placeholder="0"></input></div>

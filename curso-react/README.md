@@ -2,7 +2,7 @@
 entregas
 
 # master->last commit entregable
-contador Promise & itemListContainer - Loading
+Modal Detalles de Producto
 
 
 

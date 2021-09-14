@@ -39,7 +39,7 @@ const ItemList = () =>{
     } else if (!isLoaded) {
         
         
-        return <Item key='1' picture = '/img/producto_generico.jpg' loading = {true} />;
+        return <Item id = 'productDefault' picture = '/img/producto_generico.jpg' loading = {true} />;
     
         
     } else {
@@ -47,7 +47,7 @@ const ItemList = () =>{
         
             products.map( product => (   
             
-                <Item key={product.id} title = {product.nombre} price ={product.price} description_short = {product.descripcion_short} picture ={product.picture} />    
+                <Item id = {product.id} title = {product.nombre} price ={product.price} description_short = {product.descripcion_short} picture ={product.picture} />    
                 
             ))
 

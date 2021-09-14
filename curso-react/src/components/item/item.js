@@ -2,12 +2,16 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import AddtoCartProductList from '../addToCart/addToCartProductList';
 import Placeholder from 'react-bootstrap/Placeholder';
+import { useState } from 'react';
+import ItemDetail from '../itemDetail/itemDetail';
 
 const Item = (props) => {
+    
+    const [modalShow, setModalShow] = useState(false);
 
     return (
 
-        <Card className = 'cardProduct' style={{ width: '18rem' }} >
+        <Card key = {props.id} className = 'cardProduct' style={{ width: '18rem' }} >
             <Card.Img variant="top" src={props.picture} />
             
                 {props.loading ?
@@ -24,7 +28,7 @@ const Item = (props) => {
                             <Placeholder xs={2} />
                         </Placeholder>
 
-                        <AddtoCartProductList/>
+                        <AddtoCartProductList id = {props.id} />
 
                         <Placeholder.Button xs={6} aria-hidden="true" />
                                         
@@ -40,9 +44,27 @@ const Item = (props) => {
                         <Card.Text>
                         $ {props.price}
                         </Card.Text>
-                        <AddtoCartProductList/>
+                        <AddtoCartProductList id = {props.id}/>
 
-                        <Button style={{ marginTop: '20px' }} variant="primary">Añadir al Carrito</Button>
+                        {/* <Button style={{ marginTop: '20px' }} variant="primary">Añadir al Carrito</Button> */}
+                    
+                        <Button variant="primary" onClick={() => setModalShow(true)}>
+                            Detalles
+                        </Button>
+
+                        <ItemDetail
+                            title = {props.title}
+                            price = {props.price}
+                            description_short = {props.description_short}
+                            img = {props.picture}
+
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+
+                        />
+                    
+                    
+                    
                     </Card.Body>
                                    
                 }
