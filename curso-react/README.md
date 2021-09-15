@@ -2,7 +2,7 @@
 entregas
 
 # master->last commit entregable
-Modal Detalles de Producto
+Modal Detalles de Producto al click en detalles
 
 
 

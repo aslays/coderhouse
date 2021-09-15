@@ -1,4 +1,4 @@
-const dataProduct = [
+const dataProducts = [
 
 { "id": 1, "nombre":"Producto1", "price":199, "descripcion_short": "descripcion1", "picture":"/img/producto_generico.jpg"},
 { "id": 2, "nombre":"Producto2", "price":299, "descripcion_short": "descripcion2", "picture":"/img/producto_generico.jpg"},
@@ -8,4 +8,4 @@ const dataProduct = [
 
 ]
 
-export default dataProduct
+export default dataProducts

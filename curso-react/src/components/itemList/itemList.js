@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Item from "../item/item";
-import dataProduct from "../../datas/dataProduct";
+import dataProducts from "../../datas/dataProducts";
 
 const ItemList = () =>{
    
@@ -11,7 +11,7 @@ const ItemList = () =>{
     function getDataProduct(){
 
         return new Promise ((resolve, reject) => { 
-            setTimeout( () => resolve(dataProduct), 3000 )
+            setTimeout( () => resolve(dataProducts), 3000 )
         })
        
     }

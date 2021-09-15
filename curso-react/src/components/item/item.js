@@ -57,7 +57,7 @@ const Item = (props) => {
                             price = {props.price}
                             description_short = {props.description_short}
                             img = {props.picture}
-
+                            id_product = {props.id}
                             show={modalShow}
                             onHide={() => setModalShow(false)}
 
