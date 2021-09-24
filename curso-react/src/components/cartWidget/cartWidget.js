@@ -7,10 +7,11 @@ const CartWidget = () =>{
     return (
 
         <div>
-            <FontAwesomeIcon icon={faShoppingCart} size="2x"/>
+            <a href ="/cart">
+            <FontAwesomeIcon icon={faShoppingCart} size="2x" />
             
             <p id="label-cart">0</p>
-            
+            </a>
         </div>
         
     )

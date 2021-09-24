@@ -2,12 +2,14 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import AddtoCartProductList from '../addToCart/addToCartProductList';
 import Placeholder from 'react-bootstrap/Placeholder';
-import { useState } from 'react';
-import ItemDetail from '../itemDetail/itemDetail';
+//import { useState } from 'react';
+//import ItemDetail from '../itemDetail/itemDetail';
 
 const Item = (props) => {
     
-    const [modalShow, setModalShow] = useState(false);
+    //const [modalShow, setModalShow] = useState(false);
+
+    const url = 'product/'+props.id
 
     return (
 
@@ -48,11 +50,13 @@ const Item = (props) => {
 
                         {/* <Button style={{ marginTop: '20px' }} variant="primary">Añadir al Carrito</Button> */}
                     
-                        <Button variant="primary" onClick={() => setModalShow(true)}>
-                            Detalles
+                        <Button variant="primary" href={url} >
+                            Comprar
                         </Button>
 
-                        <ItemDetail
+                        
+
+                        {/* <ItemDetail
                             title = {props.title}
                             price = {props.price}
                             description_short = {props.description_short}
@@ -61,7 +65,7 @@ const Item = (props) => {
                             show={modalShow}
                             onHide={() => setModalShow(false)}
 
-                        />
+                        /> */}
                     
                     
                     

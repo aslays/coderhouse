@@ -1,35 +1,38 @@
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
+//import Modal from 'react-bootstrap/Modal'
+//import Button from 'react-bootstrap/Button'
 //import dataProducts from "../../datas/dataProducts";
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+//import AddtoCartProductList from '../addToCart/addToCartProductList';
+//import Placeholder from 'react-bootstrap/Placeholder';
 
 const ItemDetail = (props) => {
 
+  //console.log(props)
 
 
   return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          {props.title}
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body className='bodyProductModalDetail'>
-        <img src={props.img} alt="no hay foto" />
-        <h4>{props.title}</h4>
-        <p>
-          {props.description_short}
-        </p>
-        <p>$ {props.price}</p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Cerrar</Button>
-      </Modal.Footer>
-    </Modal>
+    <Card.Body>    
+        
+        <Card.Title>{props.productDetail.nombre}</Card.Title>    
+        
+        <Card.Text>
+            {props.productDetail.descripcion_short}
+        </Card.Text>
+        
+        <Card.Text>
+        $ {props.productDetail.price}
+        </Card.Text>
+        {/* <AddtoCartProductList id = {props.id}/> */}
+
+        {/* <Button style={{ marginTop: '20px' }} variant="primary">Añadir al Carrito</Button> */}
+    
+        <Button variant="primary" >
+            Comprar
+        </Button>
+
+    
+    </Card.Body>
   )
 }
 
