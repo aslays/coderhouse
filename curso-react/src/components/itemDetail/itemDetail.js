@@ -1,8 +1,8 @@
 //import Modal from 'react-bootstrap/Modal'
 //import Button from 'react-bootstrap/Button'
 //import dataProducts from "../../datas/dataProducts";
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+//import Card from 'react-bootstrap/Card'
+//import Button from 'react-bootstrap/Button'
 //import AddtoCartProductList from '../addToCart/addToCartProductList';
 //import Placeholder from 'react-bootstrap/Placeholder';
 
@@ -12,27 +12,32 @@ const ItemDetail = (props) => {
 
 
   return (
-    <Card.Body>    
+    <main class="container">
+      
+      <div class="left-column">
+        <img data-image="black" src="/img/imagen_completa.jpg" alt=""/>
         
-        <Card.Title>{props.productDetail.nombre}</Card.Title>    
-        
-        <Card.Text>
-            {props.productDetail.descripcion_short}
-        </Card.Text>
-        
-        <Card.Text>
-        $ {props.productDetail.price}
-        </Card.Text>
-        {/* <AddtoCartProductList id = {props.id}/> */}
-
-        {/* <Button style={{ marginTop: '20px' }} variant="primary">Añadir al Carrito</Button> */}
+      </div>
     
-        <Button variant="primary" >
-            Comprar
-        </Button>
-
     
-    </Card.Body>
+      
+      <div class="right-column">
+    
+       
+        <div class="product-description">
+          <span>{props.productDetail.nombre}</span>
+          <h1>{props.productDetail.nombre}</h1>
+          <p>{props.productDetail.descripcion_short}</p>
+        </div>
+           
+        <div class="product-price">
+          <span>$ {props.productDetail.price}</span>
+          
+          
+        </div>
+      </div>
+
+    </main>
   )
 }
 
