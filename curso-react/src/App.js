@@ -26,6 +26,10 @@ function App() {
           <ItemDetailContainer/>
         </Route>
 
+        <Route path = "/category/:id">
+          <ItemListContainer/>
+        </Route>
+
       </Switch>
 
     </BrowserRouter>    

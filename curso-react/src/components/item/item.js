@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import AddtoCartProductList from '../addToCart/addToCartProductList';
+//import AddtoCartProductList from '../addToCart/addToCartProductList';
 import Placeholder from 'react-bootstrap/Placeholder';
 //import { useState } from 'react';
 //import ItemDetail from '../itemDetail/itemDetail';
@@ -30,7 +30,7 @@ const Item = (props) => {
                             <Placeholder xs={2} />
                         </Placeholder>
 
-                        <AddtoCartProductList id = {props.id} />
+                        {/* <AddtoCartProductList key={props.id} id = {props.id} /> */}
 
                         <Placeholder.Button xs={6} aria-hidden="true" />
                                         
@@ -46,12 +46,12 @@ const Item = (props) => {
                         <Card.Text>
                         $ {props.price}
                         </Card.Text>
-                        <AddtoCartProductList id = {props.id}/>
+                        {/* <AddtoCartProductList key= {props.id} id = {props.id}/> */}
 
                         {/* <Button style={{ marginTop: '20px' }} variant="primary">Añadir al Carrito</Button> */}
                     
                         <Button variant="primary" href={url} >
-                            Comprar
+                            Ver mas
                         </Button>
 
                         

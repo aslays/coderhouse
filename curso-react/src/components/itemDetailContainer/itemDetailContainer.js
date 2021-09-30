@@ -8,7 +8,7 @@ import ItemDetail from '../itemDetail/itemDetail';
 
 const ItemDetailContainer = () =>{
 
-    const idItem  = useParams()
+    const idItem = useParams()
 
     console.log(idItem.id)
     

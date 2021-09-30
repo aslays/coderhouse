@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import ItemList from '../itemList/itemList';
 import { useEffect, useState } from "react";
 import dataProducts from "../../datas/dataProducts";
+import { useParams } from 'react-router';
 //import Item from "../item/item";
 
 // import Card from 'react-bootstrap/Card'
@@ -14,10 +15,26 @@ const ItemListContainer = () =>{
     const [isLoaded, setIsLoaded] = useState(false);
     const [products, setProducts] = useState([]);
 
+    const categoryId = useParams()
+
+    console.log("categoria filtrar "+categoryId.id)
+    //let filtered = []
+
     function getDataProduct(){
+       
+        let productos = dataProducts
+
+        if(categoryId.id){
+            // eslint-disable-next-line eqeqeq
+            productos = dataProducts.filter(product => product.category_id == categoryId.id)
+          
+            console.log("filtro categoria " +categoryId.id)
+          }
+
 
         return new Promise ((resolve, reject) => { 
-            setTimeout( () => resolve(dataProducts), 3000 )
+
+            setTimeout( () => resolve(productos), 3000 )
         })
        
     }
@@ -37,6 +54,8 @@ const ItemListContainer = () =>{
             setError(error);
             }
         )
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     if (error) {

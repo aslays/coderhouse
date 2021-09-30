@@ -3,40 +3,48 @@
 //import dataProducts from "../../datas/dataProducts";
 //import Card from 'react-bootstrap/Card'
 //import Button from 'react-bootstrap/Button'
-//import AddtoCartProductList from '../addToCart/addToCartProductList';
+import AddtoCartProductDetail from '../addToCart/addToCartProductDetail';
+//import AddtoCartConfirm from '../addToCart/addToCartConfirm';
 //import Placeholder from 'react-bootstrap/Placeholder';
 
 const ItemDetail = (props) => {
 
   //console.log(props)
 
-
   return (
-    <main class="container">
+    <main className="container">
       
-      <div class="left-column">
+      <div className="left-column">
         <img data-image="black" src="/img/imagen_completa.jpg" alt=""/>
         
       </div>
     
     
       
-      <div class="right-column">
+      <div className="right-column">
     
        
-        <div class="product-description">
+        <div className="product-description">
           <span>{props.productDetail.nombre}</span>
           <h1>{props.productDetail.nombre}</h1>
           <p>{props.productDetail.descripcion_short}</p>
+          <p>stock: {props.productDetail.stock}</p>
         </div>
            
-        <div class="product-price">
+        <div className="product-price">
           <span>$ {props.productDetail.price}</span>
           
           
         </div>
+
+        <AddtoCartProductDetail key={props.productDetail.id} id = {props.id} stock = {props.productDetail.stock} product={props.productDetail} />
+
+        
+        
+
       </div>
 
+      
     </main>
   )
 }
