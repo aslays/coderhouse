@@ -7,9 +7,10 @@ import AddtoCartProductDetail from '../addToCart/addToCartProductDetail';
 //import AddtoCartConfirm from '../addToCart/addToCartConfirm';
 //import Placeholder from 'react-bootstrap/Placeholder';
 
-const ItemDetail = (props) => {
+const ItemDetail = ({product}) => {
 
-  //console.log(props)
+  //console.log(product)
+  
 
   return (
     <main className="container">
@@ -25,19 +26,20 @@ const ItemDetail = (props) => {
     
        
         <div className="product-description">
-          <span>{props.productDetail.nombre}</span>
-          <h1>{props.productDetail.nombre}</h1>
-          <p>{props.productDetail.descripcion_short}</p>
-          <p>stock: {props.productDetail.stock}</p>
+          <span>{product.nombre}</span>
+          <h1>{product.nombre}</h1>
+          <p>{product.descripcion_short}</p>
+          <p>stock: {product.stock}</p>
         </div>
            
         <div className="product-price">
-          <span>$ {props.productDetail.price}</span>
+          <span>$ {product.price}</span>
           
           
         </div>
 
-        <AddtoCartProductDetail key={props.productDetail.id} id = {props.id} stock = {props.productDetail.stock} product={props.productDetail} />
+        {/* key={props.productDetail.id} id = {props.id} */}
+        <AddtoCartProductDetail product = {product}  />
 
         
         

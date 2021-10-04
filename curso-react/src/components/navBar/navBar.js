@@ -3,15 +3,39 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../cartWidget/cartWidget';
+//import { useContext } from 'react';
+import React, { useContext } from 'react'
+import Context from '../../context/cartContext';
+
+//import { useState, useEffect } from "react";
 
 
 const NavBar = () => {
+
+    //const cart = useContext(CartContext)
+    //const [productQuantity, setProductQuantity] = useState(0)
+
+    //console.log( "productos en el nav "+cartProducts)
+
+    // useEffect(() => {
+    //     if(cartProducts.length === 0) {
+    //       setProductQuantity(0)
+    //     } else {
+    //       cartProducts.forEach(prod => {
+    //         setProductQuantity(productQuantity + prod.quantity)
+    //     })
+    //     }
+    //   }, [cartProducts]) // eslint-disable-line
+
+    const {cart} = useContext(Context)
+
+    console.log("carrito en nav "+ cart.cantidad)
 
     return(
 
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="/">Wualá-E</Navbar.Brand>
+                <Navbar.Brand href="/">E-ComFull</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
@@ -31,7 +55,7 @@ const NavBar = () => {
                 </Nav>
 
                 <Nav>
-                    <CartWidget/>
+                    <CartWidget quantity={cart.cantidad}/>
                 </Nav>
 
             </Container>

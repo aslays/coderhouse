@@ -62,13 +62,8 @@ const ItemDetailContainer = () =>{
                    
             <Container key ={product.id} className='container-sale' style={{display: 'flex'}} >
 
-            {/* <div>aca el div de detalle de producto {idItem.id}  
-                <p>id producto: {product.id}</p>
-                <p>price : {product.price}</p>
-                <p>url_img: {product.picture}</p>
-            </div> */}
-           
-            <ItemDetail key ={product.id} productDetail = {product} />
+            {/* key ={product.id} */}
+            <ItemDetail product={product} />
             
 
             </Container>

@@ -274,3 +274,8 @@ html, body {
     top: -85px;
   }
 }
+
+.addToCartProductDetail{
+  display: block !important;
+  margin-top: 15px;
+}

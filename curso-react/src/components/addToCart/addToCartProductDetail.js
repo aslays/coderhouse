@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import AddtoCartConfirm from './addToCartConfirm'
+import CartContext   from '../../context/cartContext'
 
-const AddtoCartProductDetail = (props) =>{
+const AddtoCartProductDetail = ({product}) =>{
       
     const [cartProducts, setCount] = useState(0)
-    const stock = props.stock;
+    const stock = product.stock;
+
+    const { setQuantityCart } = useContext(CartContext)
 
     const discountCartItem = () => {
         if(cartProducts >= 1)
@@ -18,19 +21,48 @@ const AddtoCartProductDetail = (props) =>{
         setCount(cartProducts + 1)
     }
 
+    // const resetToCart = () =>{
+
+    //     setCount(0)
+    // }
+
+    const onAddtoCart = () =>{
+        
+        // const newProduct = {
+        //     ...product,
+        //     quantity: cartProducts
+        // }
+              
+        //addProdFunction([...productsAdded, newProduct])
+
+        setQuantityCart(cartProducts)
+
+        //resetToCart()
+        
+        
+    }
+
     return(
-       <>          
-        <ButtonGroup className="buttonsAddCartProdDetail" key={props.id} >
-            <Button onClick = {discountCartItem}> - </Button>
+       <> 
+
+          
+        <ButtonGroup className="buttonsAddCartProdDetail" key={product.id} >
+            <Button key='key_test1' onClick = {discountCartItem}> - </Button>
 
             <div><input className="inputCart" type ="text" value = {cartProducts} placeholder="0"></input></div>
             
-            <Button onClick = {sumItemToCart}> + </Button>
+            <Button key='key_test2' onClick = {sumItemToCart}> + </Button>
             
-            <AddtoCartConfirm product = {props.product} compra = {cartProducts} />
+            
 
         </ButtonGroup>
 
+        
+        <div onClick={onAddtoCart} >
+            
+            <AddtoCartConfirm product = {product} compra = {cartProducts} />
+        
+        </div>
         
         </>
     )

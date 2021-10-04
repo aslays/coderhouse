@@ -1,8 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+
+// import { useContext } from 'react';
+// import { CartContext } from '../../context/cartContext';
 
 
-const CartWidget = () =>{
+
+const CartWidget = (props) =>{
+
+    //const cart = useContext(CartContext)
+
 
     return (
 
@@ -10,7 +17,7 @@ const CartWidget = () =>{
             <a href ="/cart">
             <FontAwesomeIcon icon={faShoppingCart} size="2x" />
             
-            <p id="label-cart">0</p>
+            <p id="label-cart">{props.quantity}</p>
             </a>
         </div>
         
